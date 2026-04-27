@@ -1,0 +1,10 @@
+﻿
+> frontend@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Failed to compile.
+
+Module not found: Error: Can't resolve 'react-router-dom' in 'C:\A\Studies\Y2S2\project\inka_clothing_ecommerce_store\frontend\src'
+
+

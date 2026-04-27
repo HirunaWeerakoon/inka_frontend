@@ -1,0 +1,347 @@
+.product-section {
+  padding: 24px 40px 60px;
+  background: #fff;
+  min-height: calc(100vh - 70px);
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-dropdown {
+  position: relative;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1px solid #111;
+  padding: 8px 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #111;
+  transition: background 0.15s, color 0.15s;
+}
+
+.filter-btn:hover {
+  background: #111;
+  color: #fff;
+}
+
+.filter-btn svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+.filter-menu {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  width: 224px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  z-index: 20;
+  padding-bottom: 6px;
+}
+
+.filter-section-title {
+  padding: 14px 18px 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #bbb;
+}
+
+.filter-divider {
+  height: 1px;
+  background: #f0f0f0;
+  margin: 6px 0;
+}
+
+/* Custom checkbox option row */
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: none;
+  border-left: 2px solid transparent;
+  background: #fff;
+  color: #111;
+  padding: 7px 18px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  user-select: none;
+}
+
+.filter-option:hover {
+  background: #f7f7f7;
+  border-left-color: #ccc;
+}
+
+.filter-option--active {
+  border-left-color: #111;
+  font-weight: 500;
+  background: #f5f5f5;
+}
+
+/* Hide native checkbox */
+.filter-checkbox {
+  display: none;
+}
+
+/* Custom square checkbox */
+.filter-checkbox-box {
+  width: 13px;
+  height: 13px;
+  border: 1.5px solid #ccc;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, background 0.15s;
+  background: #fff;
+}
+
+.filter-option--active .filter-checkbox-box {
+  background: #111;
+  border-color: #111;
+}
+
+/* Checkmark inside the box */
+.filter-checkbox-box::after {
+  content: '';
+  display: none;
+  width: 4px;
+  height: 7px;
+  border: 1.5px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg) translateY(-1px);
+}
+
+.filter-option--active .filter-checkbox-box::after {
+  display: block;
+}
+
+/* Price range */
+.price-section {
+  padding: 4px 18px 10px;
+}
+
+.price-slider {
+  position: relative;
+  height: 22px;
+  margin: 6px 0 16px;
+}
+
+.price-slider-track {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #e8e8e8;
+}
+
+.price-slider-active-track {
+  position: absolute;
+  top: 10px;
+  height: 2px;
+  background: #111;
+}
+
+.price-slider-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 22px;
+  margin: 0;
+  pointer-events: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+
+.price-slider-input::-webkit-slider-runnable-track {
+  height: 2px;
+  background: transparent;
+}
+
+.price-slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  pointer-events: auto;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid #111;
+  background: #fff;
+  margin-top: -6px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.price-slider-input::-webkit-slider-thumb:hover {
+  background: #111;
+}
+
+.price-slider-input::-moz-range-track {
+  height: 2px;
+  background: transparent;
+}
+
+.price-slider-input::-moz-range-thumb {
+  pointer-events: auto;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid #111;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.price-slider-input::-moz-range-thumb:hover {
+  background: #111;
+}
+
+.price-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.price-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.price-range-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #bbb;
+}
+
+.price-range-input {
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 4px 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: #111;
+  outline: none;
+  background: transparent;
+  width: 100%;
+}
+
+.price-range-input:focus {
+  border-bottom-color: #111;
+}
+
+/* Remove number input arrows */
+.price-range-input::-webkit-outer-spin-button,
+.price-range-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.price-range-input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.price-reset-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #999;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s;
+}
+
+.price-reset-btn:hover {
+  color: #111;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+}
+
+.product-count {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: #bbb;
+  letter-spacing: 0.5px;
+  margin-left: auto;
+}
+
+.loading,
+.no-products {
+  text-align: center;
+  padding: 80px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: #aaa;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .product-section {
+    padding: 20px 16px 40px;
+  }
+
+  .filter-bar {
+    flex-wrap: wrap;
+  }
+
+  .product-count {
+    margin-left: 0;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+
+@media (max-width: 520px) {
+  .filter-menu {
+    width: 200px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}

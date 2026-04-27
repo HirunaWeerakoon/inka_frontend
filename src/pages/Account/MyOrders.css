@@ -1,0 +1,127 @@
+.orders-list {
+    display: grid;
+    gap: 18px;
+}
+
+.orders-card {
+    border: 1px solid #e2e6ee;
+    border-radius: 14px;
+    padding: 18px;
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(17, 24, 39, 0.06);
+}
+
+.orders-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.orders-card__title {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.orders-card__id {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.orders-card__meta {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.orders-card__status {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.orders-card__status--paid {
+    background: #e7f7ed;
+    color: #127a3c;
+}
+
+.orders-card__status--pending {
+    background: #fff5db;
+    color: #a16207;
+}
+
+.orders-card__status--failed {
+    background: #fde8e8;
+    color: #b91c1c;
+}
+
+.orders-card__items {
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 14px 0;
+    display: grid;
+    gap: 10px;
+}
+
+.orders-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: #111827;
+}
+
+.orders-item__name {
+    font-weight: 600;
+}
+
+.orders-item__qty {
+    color: #6b7280;
+}
+
+.orders-item__price {
+    font-weight: 700;
+}
+
+.orders-card__totals {
+    margin-top: 14px;
+    display: grid;
+    gap: 8px;
+}
+
+.orders-card__row {
+    display: flex;
+    justify-content: space-between;
+    color: #4b5563;
+}
+
+.orders-card__row--total {
+    font-weight: 700;
+    color: #111827;
+}
+
+@media (max-width: 640px) {
+    .orders-card {
+        padding: 14px;
+    }
+
+    .orders-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .orders-item__qty {
+        order: 2;
+    }
+
+    .orders-item__price {
+        order: 3;
+    }
+}
