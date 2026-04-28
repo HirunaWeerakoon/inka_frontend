@@ -134,7 +134,7 @@ export default function CustomPage() {
     const [qty, setQty] = useState(1);
     const [checkoutLoading, setCheckoutLoading] = useState(false);
     const [designs, setDesigns] = useState({});
-    const [uploading, setUploading] = useState(false);
+    const [uploading] = useState(false);
     const [uploadError, setUploadError] = useState(null);
     const [orderMode, setOrderMode] = useState(MODE_SINGLE);
     const [variations, setVariations] = useState([]);
@@ -244,8 +244,9 @@ export default function CustomPage() {
         }
         window.addEventListener('keydown', onKey);
         return () => window.removeEventListener('keydown', onKey);
-    }, [currentDesign.url]);
+    }, [currentDesign.url, setCurrentDesign]);
 
+    // validate options
     function validateOptions() {
         const anyDesign = views.some(v => designs[designKey(subId, v)]?.url);
         if (!anyDesign) { alert('Please upload your design first'); return false; }

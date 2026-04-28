@@ -20,10 +20,10 @@ export default function Header({ onCartOpen }) {
     navigate('/login');
   };
 
-  const handleLogout = () => {
-    authService.removeToken();
-    window.location.href = '/';
-  };
+  // const handleLogout = () => {
+  //  authService.removeToken();
+  //  window.location.href = '/';
+  //};
 
   useEffect(() => {
     if (!isSearchOpen) return;

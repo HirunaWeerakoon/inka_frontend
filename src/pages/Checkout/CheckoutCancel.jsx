@@ -10,7 +10,7 @@ export default function CheckoutCancel() {
         if (orderId) {
             checkoutService.cancelOrder(orderId).catch(console.error);
         }
-    }, []);
+    }, [searchParams]);
 
     return (
         <div className="placeholder-page">
