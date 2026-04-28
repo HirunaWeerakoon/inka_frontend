@@ -159,7 +159,7 @@ export default function CustomPage() {
     const subId = selectedSub?.id ?? 'none';
     const currentDesign = designs[designKey(subId, activeView)] || defaultDesign();
 
-    const setCurrentDesign = (patch) => {
+    const setCurrentDesign = useCallback((patch) => {
         const k = designKey(subId, activeView);
         setDesigns(d => ({
             ...d,
@@ -168,7 +168,7 @@ export default function CustomPage() {
                 ...(typeof patch === 'function' ? patch(d[k] || defaultDesign()) : patch),
             },
         }));
-    };
+    }, [subId, activeView]);
 
     useEffect(() => {
         if (!selectedCategory) return;
