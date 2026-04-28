@@ -1,16 +1,22 @@
+import axios from 'axios';
+
 export const uploadImage = async (file) => {
     const formData = new FormData();
     formData.append("file", file);
 
-    const response = await fetch('/api/images/upload', {
-        method: 'POST',
-        body: formData,
-    });
+    try {
+        const response = await axios.post('/api/images/upload', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            },
+        });
 
-    const data = await response.json();
-    if (!response.ok || !data.url) {
-        throw new Error(data.error || data.message || 'Upload failed');
+        if (!response.data.url) {
+            throw new Error('Upload failed: No URL returned');
+        }
+
+        return response.data.url;
+    } catch (error) {
+        throw new Error(error.response?.data?.error || error.response?.data?.message || error.message || 'Upload failed');
     }
-
-    return data.url;
 };

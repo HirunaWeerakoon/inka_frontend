@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import axios from 'axios';
 import ProductCard from './ProductCard';
 import './ProductGrid.css';
 
@@ -41,13 +42,9 @@ function ProductGrid() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/products')
+    axios.get('/api/products')
       .then(response => {
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        return response.json();
-      })
-      .then(data => {
-        setProducts(Array.isArray(data) ? data : []);
+        setProducts(Array.isArray(response.data) ? response.data : []);
         setLoading(false);
       })
       .catch(error => {
@@ -162,7 +159,7 @@ function ProductGrid() {
             aria-haspopup="true"
           >
             <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M1 3h12M3 7h8M5 11h4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+              <path d="M1 3h12M3 7h8M5 11h4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
             </svg>
             Filter
           </button>
