@@ -22,9 +22,11 @@ import Cart from './pages/Cart/Cart';
 
 import { authService } from './services/authService';
 import AboutPage from './pages/About/AboutPage';
+import axios from 'axios';
 
 // Initialize axios interceptors globally
 authService.setupAxiosInterceptors();
+axios.defaults.baseURL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
 
 function AppLayout({ onCartOpen }) {
   return (
