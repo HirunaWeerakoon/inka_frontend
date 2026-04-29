@@ -35,7 +35,7 @@ export default function MyDetails() {
                 const url = err?.config?.url;
                 const baseURL = err?.config?.baseURL;
                 const authHeader = err?.config?.headers?.Authorization;
-                
+
                 setDebugInfo(
                     `STATUS: ${status || 'NO RESPONSE (network/CORS error)'}\n` +
                     `URL: ${baseURL || ''}${url || ''}\n` +
@@ -61,7 +61,7 @@ export default function MyDetails() {
         };
 
         fetchCustomer();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [customerId]);
 
     const handleInputChange = (e) => {
