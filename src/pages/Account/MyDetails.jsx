@@ -61,6 +61,7 @@ export default function MyDetails() {
         };
 
         fetchCustomer();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [customerId]);
 
     const handleInputChange = (e) => {
